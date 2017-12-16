@@ -1,0 +1,37 @@
+
+
+Create a script to create a Docker image for Maven 2.3 and JDK 7
+=> Dockerfile
+
+
+Find files and folders which are 30+ days or older
+find . -type f -mtime +30 -or  -type d -mtime +30
+
+
+Find files or folders that are duplicates
+find . -not -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD
+
+# find all files have the same size
+find . -not -empty -type f -printf "%s\n" | sort -rn | uniq -d | xargs -I{} -n1 
+
+find -type f -size {}c -print0 | xargs -0 md5sum | sort | uniq -w32 --all-repeated=separate
+ 
+find . -not -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD
+
+# find all files have the same name
+
+find . -type f -printf '%p/ %f\n' | sort -k2 | uniq -f1 --all-repeated=separate
+
+=====
+
+echo “what’s your name”
+read 
+
+
+
+
+
+
+
+
+
