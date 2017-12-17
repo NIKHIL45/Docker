@@ -1,2 +1,3 @@
-/target/
+# Ignores these files,
+
 .DS_Store
