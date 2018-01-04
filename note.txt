@@ -22,10 +22,6 @@ find . -not -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD
 
 find . -type f -printf '%p/ %f\n' | sort -k2 | uniq -f1 --all-repeated=separate
 
-=====
-
-echo “what’s your name”
-read 
 
 
 
